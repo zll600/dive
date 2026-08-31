@@ -1,13 +1,14 @@
 package v1
 
 import (
+	"context"
 	"errors"
 	"fmt"
+	"sync"
+
 	"github.com/wagoodman/dive/cmd/dive/cli/internal/ui/v1/key"
 	"github.com/wagoodman/dive/dive/filetree"
 	"github.com/wagoodman/dive/dive/image"
-	"golang.org/x/net/context"
-	"sync"
 )
 
 type Config struct {
