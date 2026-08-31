@@ -1,10 +1,12 @@
 package docker
 
 import (
-	"github.com/stretchr/testify/require"
-	"golang.org/x/net/context"
+	"context"
+
 	"os"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 
 	"github.com/wagoodman/dive/dive/image"
 )

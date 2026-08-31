@@ -1,21 +1,23 @@
 package docker
 
 import (
+	"context"
 	"fmt"
-	"github.com/spf13/afero"
-	"github.com/wagoodman/dive/internal/bus/event/payload"
-	"github.com/wagoodman/dive/internal/log"
 	"io"
 	"net/http"
 	"os"
 	"strings"
+
+	"github.com/containerd/errdefs"
+	"github.com/spf13/afero"
+	"github.com/wagoodman/dive/internal/bus/event/payload"
+	"github.com/wagoodman/dive/internal/log"
 
 	cliconfig "github.com/docker/cli/cli/config"
 	"github.com/docker/cli/cli/connhelper"
 	ddocker "github.com/docker/cli/cli/context/docker"
 	ctxstore "github.com/docker/cli/cli/context/store"
 	"github.com/docker/docker/client"
-	"golang.org/x/net/context"
 
 	"github.com/wagoodman/dive/dive/image"
 )
@@ -110,7 +112,7 @@ func (r *engineResolver) fetchArchive(ctx context.Context, id string) (io.ReadCl
 	_, err = dockerClient.ImageInspect(ctx, id)
 	if err != nil {
 		// check if the error is due to the image not existing locally
-		if client.IsErrNotFound(err) {
+		if errdefs.IsNotFound(err) {
 			mon := payload.GetGenericProgressFromContext(ctx)
 			if mon != nil {
 				mon.AtomicStage.Set("attempting to pull")

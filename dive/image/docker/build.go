@@ -80,5 +80,5 @@ func tryFindContainerfile(fs afero.Fs, buildArgs []string) (string, error) {
 		}
 	}
 
-	return "", fmt.Errorf("could not find Containerfile or Dockerfile\n")
+	return "", fmt.Errorf("could not find Containerfile or Dockerfile")
 }

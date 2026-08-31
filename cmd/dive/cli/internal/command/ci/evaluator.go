@@ -1,12 +1,13 @@
 package ci
 
 import (
+	"context"
 	"fmt"
-	"github.com/charmbracelet/lipgloss"
-	"golang.org/x/net/context"
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/charmbracelet/lipgloss"
 
 	"github.com/dustin/go-humanize"
 	"github.com/wagoodman/dive/dive/image"
