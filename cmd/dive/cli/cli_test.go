@@ -3,20 +3,21 @@ package cli
 import (
 	"bytes"
 	"flag"
-	"github.com/anchore/clio"
-	"github.com/charmbracelet/lipgloss"
-	snapsPkg "github.com/gkampitakis/go-snaps/snaps"
-	"github.com/google/shlex"
-	"github.com/muesli/termenv"
-	"github.com/spf13/cobra"
-	"github.com/stretchr/testify/require"
-	"go.uber.org/atomic"
 	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
 	"testing"
+
+	"charm.land/lipgloss/v2"
+	"github.com/anchore/clio"
+	"github.com/charmbracelet/colorprofile"
+	snapsPkg "github.com/gkampitakis/go-snaps/snaps"
+	"github.com/google/shlex"
+	"github.com/spf13/cobra"
+	"github.com/stretchr/testify/require"
+	"go.uber.org/atomic"
 )
 
 var (
@@ -32,7 +33,7 @@ func TestMain(m *testing.M) {
 	os.Unsetenv("DIVE_CONFIG")
 
 	// disable colors
-	lipgloss.SetColorProfile(termenv.Ascii)
+	lipgloss.Writer.Profile = colorprofile.ASCII
 
 	snaps = snapsPkg.WithConfig(
 		snapsPkg.Update(*updateSnapshot),

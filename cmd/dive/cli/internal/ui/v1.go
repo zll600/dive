@@ -3,9 +3,14 @@ package ui
 import (
 	"context"
 	"fmt"
+	"io"
+	"os"
+	"strings"
+
+	"charm.land/lipgloss/v2"
 	"github.com/anchore/clio"
 	"github.com/anchore/go-logger/adapter/discard"
-	"github.com/charmbracelet/lipgloss"
+	"github.com/charmbracelet/colorprofile"
 	"github.com/muesli/termenv"
 	v1 "github.com/wagoodman/dive/cmd/dive/cli/internal/ui/v1"
 	"github.com/wagoodman/dive/cmd/dive/cli/internal/ui/v1/app"
@@ -13,9 +18,6 @@ import (
 	"github.com/wagoodman/dive/internal/bus/event/parser"
 	"github.com/wagoodman/dive/internal/log"
 	"github.com/wagoodman/go-partybus"
-	"io"
-	"os"
-	"strings"
 )
 
 var _ clio.UI = (*V1UI)(nil)
@@ -61,7 +63,7 @@ func (n *V1UI) Setup(subscription partybus.Unsubscribable) error {
 	}
 
 	// remove CI var from consideration when determining if we should use the UI
-	lipgloss.SetDefaultRenderer(lipgloss.NewRenderer(n.out, termenv.WithEnvironment(environWithoutCI{})))
+	lipgloss.Writer = colorprofile.NewWriter(n.out, os.Environ())
 
 	n.subscription = subscription
 	return nil
