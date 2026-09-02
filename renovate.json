@@ -17,5 +17,6 @@
       "matchManagers": ["dockerfile", "docker-compose"],
       "groupName": "Docker Images"
     }
-  ]
+  ],
+  "minimumReleaseAge": "7 days"
 }
