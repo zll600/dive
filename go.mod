@@ -60,7 +60,6 @@ require (
 	github.com/gdamore/encoding v1.0.1 // indirect
 	github.com/gdamore/tcell/v2 v2.13.10 // indirect
 	github.com/gkampitakis/ciinfo v0.3.4 // indirect
-	github.com/gkampitakis/go-diff v1.3.2 // indirect
 	github.com/go-logr/logr v1.4.4 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-viper/mapstructure/v2 v2.5.0 // indirect
