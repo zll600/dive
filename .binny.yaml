@@ -2,7 +2,7 @@ tools:
   # we want to use a pinned version of binny to manage the toolchain (so binny manages itself!)
   - name: binny
     version:
-      want: v0.9.0
+      want: v0.13.2
     method: github-release
     with:
       repo: anchore/binny
@@ -18,7 +18,7 @@ tools:
   # used for showing the changelog at release
   - name: glow
     version:
-      want: v2.1.0
+      want: v2.1.2
     method: github-release
     with:
       repo: charmbracelet/glow
@@ -26,7 +26,7 @@ tools:
   # used to release all artifacts
   - name: goreleaser
     version:
-      want: v2.8.1
+      want: v2.18.0
     method: github-release
     with:
       repo: goreleaser/goreleaser
@@ -34,7 +34,7 @@ tools:
   # used at release to generate the changelog
   - name: chronicle
     version:
-      want: v0.8.0
+      want: v0.13.1
     method: github-release
     with:
       repo: anchore/chronicle
@@ -50,7 +50,7 @@ tools:
   # used for running all local and CI tasks
   - name: task
     version:
-      want: v3.42.1
+      want: v3.53.1
     method: github-release
     with:
       repo: go-task/task
@@ -58,7 +58,7 @@ tools:
   # used for triggering a release
   - name: gh
     version:
-      want: v2.69.0
+      want: v2.98.0
     method: github-release
     with:
       repo: cli/cli
