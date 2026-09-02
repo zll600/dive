@@ -19,7 +19,7 @@ require (
 	github.com/google/go-cmp v0.7.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/google/uuid v1.6.0
-	github.com/klauspost/compress v1.19.2
+	github.com/klauspost/compress v1.20.0
 	github.com/lunixbochs/vtclean v1.0.0
 	github.com/muesli/termenv v0.16.0
 	github.com/phayes/permbits v0.0.0-20190612203442-39d7c581d2ee
