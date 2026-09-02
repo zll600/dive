@@ -18,5 +18,15 @@
       "groupName": "Docker Images"
     }
   ],
-  "minimumReleaseAge": "7 days"
+  "minimumReleaseAge": "7 days",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)\\.binny\\.ya?ml$"],
+      "matchStrings": [
+        "-\\s*name:\\s*(?<depName>[\\w\\-]+)\\s*\\n\\s*version:\\s*\\n\\s*want:\\s*(?<currentValue>v?[\\d\\.]+)\\s*\\n\\s*method:\\s*github-release\\s*\\n\\s*with:\\s*\\n\\s*repo:\\s*(?<packageName>[\\w\\-\\.\\/]+)"
+      ],
+      "datasourceTemplate": "github-releases"
+    }
+  ]
 }
