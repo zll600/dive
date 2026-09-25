@@ -11,15 +11,15 @@ require (
 	github.com/cespare/xxhash/v2 v2.3.0
 	github.com/charmbracelet/colorprofile v0.4.3
 	github.com/containerd/errdefs v1.0.0
-	github.com/docker/cli v29.7.2+incompatible
+	github.com/docker/cli v29.8.1+incompatible
 	github.com/docker/docker v28.5.2+incompatible
-	github.com/dustin/go-humanize v1.0.1
+	github.com/dustin/go-humanize v1.1.0
 	github.com/fatih/color v1.19.0
 	github.com/gkampitakis/go-snaps v0.5.23
 	github.com/google/go-cmp v0.7.0
 	github.com/google/shlex v0.0.0-20191202100458-e7afc7fbc510
 	github.com/google/uuid v1.6.0
-	github.com/klauspost/compress v1.19.2
+	github.com/klauspost/compress v1.20.0
 	github.com/lunixbochs/vtclean v1.0.0
 	github.com/muesli/termenv v0.16.0
 	github.com/phayes/permbits v0.0.0-20190612203442-39d7c581d2ee
@@ -29,7 +29,7 @@ require (
 	github.com/stretchr/testify v1.12.1
 	github.com/wagoodman/go-partybus v0.0.0-20230516145632-8ccac152c651
 	github.com/wagoodman/go-progress v0.0.0-20260303201901-10176f79b2c0
-	go.uber.org/atomic v1.11.0
+	go.uber.org/atomic v1.12.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
